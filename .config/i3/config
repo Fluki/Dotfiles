@@ -1,0 +1,315 @@
+# #---PROMENLJIVE---# #
+set $mod Mod4
+set $mod1 Mod1
+#set $term --no-startup-id termite
+set $term --no-startup-id st
+set $inner_gaps 5
+set $outer_gaps 5
+set $stoprec --no-startup-id dmenurecord kill
+set $resize mode "resize"
+set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
+#set $BROWSER qutebrowser
+
+
+# #---GAPS---# #
+for_window [class="^.*"] border pixel 2
+gaps inner $inner_gaps
+gaps outer $outer_gaps
+
+# #---KEYBINDINGS---# #
+# #---OSNOVA---# #
+	# start a terminal
+	bindsym $mod+Return exec $term
+
+	# kill focused window
+	bindsym $mod+q kill
+
+	# start dmenu (a program launcher)
+	bindsym $mod+d exec dmenu_run
+
+# #---MOJE---# #
+bindsym Print 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
+bindsym $mod+w			exec --no-startup-id chromium
+bindsym $mod+r 			exec $term -e vifm
+bindsym $mod+Shift+r            exec --no-startup-id pcmanfm
+bindsym $mod+y			exec $term -e calcurse
+bindsym $mod+i 			exec $term -e htop
+bindsym $mod+Shift+y		exec --no-startup-id zathura ~/Documents/Raspored/rasporedP.pdf
+bindsym $mod+Shift+a		exec $term -e pulsemixer
+bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod1+d			gaps inner current set 5; gaps outer current set 5
+bindsym $mod+Tab		workspace back_and_forth
+bindsym $mod+m 			exec $term -e cmus
+bindsym $mod+F12 		exec $term -e nmtui
+
+
+# #---i3---# #
+# reload config file
+bindsym $mod+Shift+c reload
+# restart i3
+bindsym $mod+F2 restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
+# #---UTILS---# #
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec_always unclutter -idle 3
+exec_always picom --no-fading-openclose
+exec_always xwallpaper --focus /home/fluki/.local/bin/wallpapers/hello.jpg
+
+
+# #---FONTOVI---# #
+font pango:System San Francisko Display 8 #monospace 8
+
+
+# #---LAYOUT TASTATURE---# #
+#SRPSKI LATINICNI I CIRILICNI (KVARI ESC KEY SA CAPS) ALT+SHIFT
+#exec_always setxkbmap -model -layout us,hr,rs -variant ,, -option grp:alt_shift_toggle
+
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+
+
+# #---ZVUK---# #
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+# #---EKRANI---# #
+#exec_always xrandr --output LVDS1 --mode 1366x768 --pos 277x1080 --rotate normal --output DP1 --off --output HDMI1 --off --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+#exec_always xrandr --output LVDS1 --primary --mode 1366x768 --pos 0x768 --rotate normal --output DP1 --off --output HDMI1 --off --output VGA1 --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+
+
+# #---POWER---# #
+bindsym $mod+x			exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv ; exec --no-startup-id i3lock -e -f -c 1d2021 ; exec --no-startup-id xset dpms force off
+bindsym $mod+Shift+x		exec --no-startup-id shutdown -h now
+bindsym $mod+Shift+BackSpace	exec --no-startup-id reboot
+
+
+# #---WINDOW MANAGER---# #
+
+# #---GENERALNE PROMENLJIVE ZA TWM---# #
+
+	#FIBONACI LAYOUT
+	#default_orientation vertical #start in opposite orientation from your monitor
+	#for_window [class=".*"] split toggle #toggles split at each new window
+	#bindsym $mod+shift+q split toggle kill #kill command resets the split
+	# change container layout (stacked, tabbed, toggle split)
+	#bindsym $mod+s layout stacking
+	#bindsym $mod+w layout tabbed
+	bindsym $mod+e layout toggle split
+
+	# fullscreen
+	bindsym Control+f fullscreen toggle
+
+	# podela po horizontali i vertikali
+	bindsym $mod+h split h
+	bindsym $mod+v split v
+
+	# focus the parent container
+	bindsym $mod+a focus parent
+
+	# focus the child container
+	#bindsym $mod+d focus child
+
+
+
+
+# #---PROMENA FOKUSA---# #
+	bindsym $mod+j focus left
+	bindsym $mod+k focus down
+	bindsym $mod+l focus up
+	bindsym $mod+semicolon focus right
+
+	# alternativno mogu i sa strelicama
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
+
+	# pomeri fokusirani prozor
+	bindsym $mod+Shift+j move left
+	bindsym $mod+Shift+k move down
+	bindsym $mod+Shift+l move up
+	bindsym $mod+Shift+semicolon move right
+
+	# alternativno mogu i sa strelicama
+	bindsym $mod+Shift+Left move left
+	bindsym $mod+Shift+Down move down
+	bindsym $mod+Shift+Up move up
+	bindsym $mod+Shift+Right move right
+
+# #---WORKSPACE---# #
+	# Definisanje naziva "wokrspac-a"
+	set $ws1 "1"
+	set $ws2 "2"
+	set $ws3 "3"
+	set $ws4 "4"
+	set $ws5 "5"
+	set $ws6 "6"
+	set $ws7 "7"
+	set $ws8 "8"
+	set $ws9 "9"
+	set $ws10 "10"
+
+	# prebaci se na workspace
+	bindsym $mod+1 workspace number $ws1
+	bindsym $mod+2 workspace number $ws2
+	bindsym $mod+3 workspace number $ws3
+	bindsym $mod+4 workspace number $ws4
+	bindsym $mod+5 workspace number $ws5
+	bindsym $mod+6 workspace number $ws6
+	bindsym $mod+7 workspace number $ws7
+	bindsym $mod+8 workspace number $ws8
+	bindsym $mod+9 workspace number $ws9
+	bindsym $mod+0 workspace number $ws10
+
+	# move focused container to workspace
+	bindsym $mod+Shift+1 move container to workspace number $ws1
+	bindsym $mod+Shift+2 move container to workspace number $ws2
+	bindsym $mod+Shift+3 move container to workspace number $ws3
+	bindsym $mod+Shift+4 move container to workspace number $ws4
+	bindsym $mod+Shift+5 move container to workspace number $ws5
+	bindsym $mod+Shift+6 move container to workspace number $ws6
+	bindsym $mod+Shift+7 move container to workspace number $ws7
+	bindsym $mod+Shift+8 move container to workspace number $ws8
+	bindsym $mod+Shift+9 move container to workspace number $ws9
+	bindsym $mod+Shift+0 move container to workspace number $ws10
+	#assign [class="cmus"] $ws10
+
+	#RESIZE
+	bindsym $mod1+semicolon resize shrink width 10 px or 10 ppt
+	bindsym $mod1+k resize grow height 10 px or 10 ppt
+	bindsym $mod1+l resize shrink height 10 px or 10 ppt
+	bindsym $mod1+j resize grow width 10 px or 10 ppt
+
+	#STATUSBAR
+	bar {
+		#status_command i3blocks -c ~/.config/i3blocks/config.example
+		#status_command i3blocks -c ~/.i3/i3blocks.conf
+		status_command i3status
+		position top
+		mode dock
+		modifier None
+	}
+
+# #---FLOATING WM---# #
+	# Use Mouse+$mod to drag floating windows to their wanted position
+	floating_modifier $mod
+
+	# toggle tiling / floating
+	bindsym $mod+Shift+space floating toggle
+
+	# change focus between tiling / floating windows
+	bindsym $mod+space focus mode_toggle
+
+# #---Extra XF86 Keys---# #
+# #---KORISNI---# #
+bindsym XF86Close		kill
+#bindsym XF86Reload		restart
+bindsym XF86Eject		exec --no-startup-id dmenuumount
+
+#WEB
+bindsym XF86WLAN		exec $netrefresh
+#bindsym XF86WWW		exec --no-startup-id $BROWSER
+#bindsym XF86HomePage		exec $BROWSER
+#bindsym XF86Shop		exec $BROWSER https://kupujemprodajem.com
+#bindsym XF86Mail		exec $term -e neomutt && pkill -RTMIN+12 i3blocks
+#bindsym XF86Messenger		exec $term -e weechat
+#bindsym XF86Search		exec $BROWSER https://duckduckgo.com
+
+#BLUETOOTH
+#bindsym XF86Bluetooth		exec
+
+#MICROFON I KAMERA
+#bindsym XF86AudioMicMute	exec $micmute
+#bindsym XF86WebCam		exec --no-startup-id camtoggle
+
+#AUDIO
+#bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
+#bindsym XF86AudioNext		exec --no-startup-id mpc next
+#bindsym XF86AudioPlay		exec --no-startup-id mpc toggle
+#bindsym XF86AudioPrev		exec --no-startup-id mpc prev
+#bindsym XF86AudioStop		exec --no-startup-id mpc toggle
+#bindsym XF86AudioRewind		exec --no-startup-id mpc seek -10
+#bindsym XF86AudioForward	exec --no-startup-id mpc seek +10
+
+#TOUCHPAD
+bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
+bindsym XF86TouchpadOn		exec --no-startup-id synclient TouchpadOff=0
+bindsym XF86TouchpadOff		exec --no-startup-id synclient TouchpadOff=1
+
+#POWER
+bindsym XF86Suspend		exec --no-startup-id lockscreen
+bindsym XF86PowerOff		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+#bindsym XF86Sleep		This binding is typically mapped by systemd automatically.
+
+#KOMP
+#bindsym XF86Explorer		exec $term -e lf
+#bindsym XF86MyComputer		exec $term -e lf
+#bindsym XF86Documents		exec $term -e lf ~/Documents
+#bindsym XF86Calculator		exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+
+#EKRAN
+bindsym XF86Display		exec --no-startup-id displayselect
+bindsym XF86ScreenSaver		exec exec --no-startup-id lockscreen
+bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 15
+bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 15
+
+# #---VISAK---# #
+#bindsym XF86AudioMute		exec --no-startup-id lmc toggle
+#bindsym XF86AudioLowerVolume	exec --no-startup-id lmc down
+#bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id lmc down 10
+#bindsym Control+XF86AudioLowerVolume	exec --no-startup-id lmc down 1
+#bindsym XF86AudioRaiseVolume	exec --no-startup-id lmc up
+#bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id lmc up 10
+#bindsym Control+XF86AudioRaiseVolume	exec --no-startup-id lmc up 1
+#bindsym XF86Copy		exec
+#bindsym XF86Open		exec
+#bindsym XF86Paste		exec
+#bindsym XF86Cut		exec
+#bindsym XF86MenuKB		exec
+#bindsym XF86WakeUp		exec
+#bindsym XF86Send		exec
+#bindsym XF86Xfer		exec
+#bindsym XF86DOS		exec
+#bindsym XF86RotateWindows	exec
+#bindsym XF86TaskPane		exec
+#bindsym XF86Favorites		exec
+#bindsym XF86Back		exec
+#bindsym XF86Forward		exec
+##bindsym XF86AudioRecord
+#bindsym XF86Phone		exec
+#bindsym XF86Tools		exec
+#bindsym XF86ScrollUp		exec
+#bindsym XF86ScrollDown		exec
+#bindsym XF86New		exec
+#bindsym XF86LaunchA		exec
+#bindsym XF86LaunchB		exec
+#bindsym XF86Launch2		exec
+#bindsym XF86Launch3		exec
+#bindsym XF86Launch4		exec
+#bindsym XF86Launch5		exec
+#bindsym XF86Launch6		exec
+#bindsym XF86Launch7		exec
+#bindsym XF86Launch8		exec
+#bindsym XF86Launch9		exec
+#bindsym XF86Go			exec
+#bindsym XF86Finance		exec
+#bindsym XF86Game		exec
+#bindsym XF86KbdLightOnOff	exec
+#bindsym XF86KbdBrightnessDown	exec
+#bindsym XF86KbdBrightnessUp	exec
+#bindsym XF86Reply		exec
+#bindsym XF86MailForward	exec
+#bindsym XF86Save		exec
+#bindsym XF86Battery		exec
+# #------# #
+# #------# #
+# #------# #

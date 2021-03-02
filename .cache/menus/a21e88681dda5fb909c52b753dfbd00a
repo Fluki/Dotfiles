@@ -1,0 +1,231 @@
+1.2
+lxde-applications.menu
+10
+D/home/fluki/.local/share/desktop-directories
+D/usr/local/share/desktop-directories
+D/usr/share/desktop-directories
+D/home/fluki/.local/share/applications
+D/usr/local/share/applications
+D/usr/share/applications
+D/etc/xdg/menus/applications-merged
+D/home/fluki/.config/menus/applications-merged
+F/home/fluki/.config/menus/lxde-applications.menu
+F/etc/xdg/menus/lxde-applications.menu
+MATE;
++Applications
+Applications
+Applications
+applications-other
+lxde-menu-applications.directory
+2
+0
++Accessories
+Accessories
+Desktop accessories
+applications-accessories
+lxde-utility.directory
+2
+0
+-vim.desktop
+Vim
+Edit text files
+gvim
+
+5
+Text Editor
+vim %F
+1
+0
+vim
+
+Utility;TextEditor
+Text,editor
+
++Internet
+Internet
+Programs for Internet access such as web and email
+applications-internet
+lxde-network.directory
+2
+0
+-bssh.desktop
+Avahi SSH Server Browser
+Browse for Zeroconf-enabled SSH Servers
+network-wired
+
+5
+
+/usr/bin/bssh
+0
+0
+
+
+GNOME;Network
+
+-bvnc.desktop
+Avahi VNC Server Browser
+Browse for Zeroconf-enabled VNC Servers
+network-wired
+
+5
+
+/usr/bin/bvnc
+0
+0
+
+
+GNOME;Network
+
+-chromium.desktop
+Chromium
+Access the Internet
+chromium
+
+5
+Web Browser
+/usr/bin/chromium %U
+2
+0
+
+
+Network;WebBrowser
+
+
++Multimedia
+Sound & Video
+Multimedia menu
+applications-multimedia
+lxde-audio-video.directory
+2
+0
+-qv4l2.desktop
+Qt V4L2 test Utility
+Allow testing Video4Linux devices
+qv4l2
+
+5
+
+qv4l2
+0
+0
+
+
+AudioVideo
+video,grabber,V4L
+-qvidcap.desktop
+Qt V4L2 video capture utility
+Viewer for video capture
+qvidcap
+
+5
+
+qvidcap
+0
+0
+
+
+AudioVideo
+video,grabber,V4L
+
++System
+System Tools
+System configuration and monitoring
+applications-system
+lxde-system-tools.directory
+2
+0
+-avahi-discover.desktop
+Avahi Zeroconf Browser
+Browse for Zeroconf services available on your network
+network-wired
+
+5
+
+/usr/bin/avahi-discover
+0
+0
+
+
+GNOME;System
+
+-pcmanfm.desktop
+File Manager PCManFM
+Browse the file system and manage the files
+system-file-manager
+
+5
+File Manager
+pcmanfm %U
+2
+0
+
+
+System;FileTools;FileManager;Utility;Core;GTK
+
+-termite.desktop
+Termite
+Use the command line
+utilities-terminal
+
+5
+
+termite
+2
+0
+
+
+GTK;System;TerminalEmulator
+
+-vifm.desktop
+Vifm
+Vi[m] like ncurses based file manager
+vifm
+
+5
+File Manager
+vifm %F
+1
+0
+vifm
+
+System;FileTools;FileManager;Utility;ConsoleOnly
+File,Directory,Browse
+
+-
++DesktopSettings
+Preferences
+Personal preferences
+preferences-desktop
+lxde-settings.directory
+2
+0
+-pcmanfm-desktop-pref.desktop
+Desktop Preferences
+Change desktop wallpapers and behavior of desktop manager
+user-desktop
+
+5
+
+pcmanfm --desktop-pref
+2
+-47
+
+
+Settings;GTK;DesktopSettings;X-LXDE-Settings
+
+-libfm-pref-apps.desktop
+Preferred Applications
+Select applications called on click on Web link or e-mail address
+preferences-desktop
+
+5
+
+libfm-pref-apps
+2
+1
+
+
+Settings;DesktopSettings;X-LXDE-Settings;GTK
+
+
+
