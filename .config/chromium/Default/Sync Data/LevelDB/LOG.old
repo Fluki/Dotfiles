@@ -1,3 +1,3 @@
-2021/03/02-00:12:22.770 d69b Reusing MANIFEST /home/fluki/.config/chromium/Default/Sync Data/LevelDB/MANIFEST-000001
-2021/03/02-00:12:22.772 d69b Recovering log #3
-2021/03/02-00:12:22.776 d69b Reusing old log /home/fluki/.config/chromium/Default/Sync Data/LevelDB/000003.log 
+2021/03/02-00:17:46.667 11218 Reusing MANIFEST /home/fluki/.config/chromium/Default/Sync Data/LevelDB/MANIFEST-000001
+2021/03/02-00:17:46.682 11218 Recovering log #3
+2021/03/02-00:17:46.683 11218 Reusing old log /home/fluki/.config/chromium/Default/Sync Data/LevelDB/000003.log 
