@@ -14,10 +14,10 @@
 ~MSle0~/backgr
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1614693208,,"wq"
 :w
-|2,0,1614692567,,"w"
+|2,0,1614683353,,"w"
+:wq
+|2,0,1614683008,,"wq"
 :W
 |2,0,1614644208,,"W"
 :wq!
@@ -51,40 +51,30 @@
 |3,0,36,0,1,0,1614644237," "
 
 # File marks:
-'0  37  42  ~/.config/i3/config
-|4,48,37,42,1614693208,"~/.config/i3/config"
+'0  1  0  ~/.config/i3/config
+|4,48,1,0,1614692571,"~/.config/i3/config"
 '1  5  0  ~/.config/i3/config
 |4,49,5,0,1614683778,"~/.config/i3/config"
-'2  7  69  ~/.bash_profile
-|4,50,7,69,1614683008,"~/.bash_profile"
-'3  58  6  ~/.xinitrc
-|4,51,58,6,1614682927,"~/.xinitrc"
-'4  16  0  ~/.bashrc
-|4,52,16,0,1614644883,"~/.bashrc"
-'5  6  15  ~/.config/i3/config
-|4,53,6,15,1614644382,"~/.config/i3/config"
-'6  5  15  ~/.config/i3/config
-|4,54,5,15,1614644382,"~/.config/i3/config"
-'7  58  6  ~/.xinitrc
-|4,55,58,6,1614642902,"~/.xinitrc"
-'8  14  3  ~/.bashrc
-|4,56,14,3,1614641764,"~/.bashrc"
-'9  16  2  ~/.bashrc
-|4,57,16,2,1614641460,"~/.bashrc"
+'2  5  0  ~/.config/i3/config
+|4,50,5,0,1614683778,"~/.config/i3/config"
+'3  7  69  ~/.bash_profile
+|4,51,7,69,1614683008,"~/.bash_profile"
+'4  58  6  ~/.xinitrc
+|4,52,58,6,1614682927,"~/.xinitrc"
+'5  16  0  ~/.bashrc
+|4,53,16,0,1614644883,"~/.bashrc"
+'6  6  15  ~/.config/i3/config
+|4,54,6,15,1614644382,"~/.config/i3/config"
+'7  5  15  ~/.config/i3/config
+|4,55,5,15,1614644382,"~/.config/i3/config"
+'8  6  15  ~/.config/i3/config
+|4,56,6,15,1614644382,"~/.config/i3/config"
+'9  5  15  ~/.config/i3/config
+|4,57,5,15,1614644382,"~/.config/i3/config"
 
 # Jumplist (newest first):
--'  37  42  ~/.config/i3/config
-|4,39,37,42,1614693208,"~/.config/i3/config"
--'  37  42  ~/.config/i3/config
-|4,39,37,42,1614693208,"~/.config/i3/config"
--'  56  37  ~/.config/i3/config
-|4,39,56,37,1614693198,"~/.config/i3/config"
--'  56  37  ~/.config/i3/config
-|4,39,56,37,1614693198,"~/.config/i3/config"
 -'  1  0  ~/.config/i3/config
-|4,39,1,0,1614692496,"~/.config/i3/config"
--'  1  0  ~/.config/i3/config
-|4,39,1,0,1614692496,"~/.config/i3/config"
+|4,39,1,0,1614692571,"~/.config/i3/config"
 -'  5  0  ~/.config/i3/config
 |4,39,5,0,1614683778,"~/.config/i3/config"
 -'  5  0  ~/.config/i3/config
@@ -93,6 +83,8 @@
 |4,39,4,1,1614683352,"~/.config/i3/config"
 -'  4  1  ~/.config/i3/config
 |4,39,4,1,1614683352,"~/.config/i3/config"
+-'  1  0  ~/.config/i3/config
+|4,39,1,0,1614683312,"~/.config/i3/config"
 -'  7  69  ~/.bash_profile
 |4,39,7,69,1614683008,"~/.bash_profile"
 -'  7  69  ~/.bash_profile
@@ -177,6 +169,14 @@
 |4,39,6,15,1614644382,"~/.config/i3/config"
 -'  6  15  ~/.config/i3/config
 |4,39,6,15,1614644382,"~/.config/i3/config"
+-'  5  15  ~/.config/i3/config
+|4,39,5,15,1614644382,"~/.config/i3/config"
+-'  5  15  ~/.config/i3/config
+|4,39,5,15,1614644382,"~/.config/i3/config"
+-'  5  15  ~/.config/i3/config
+|4,39,5,15,1614644382,"~/.config/i3/config"
+-'  5  15  ~/.config/i3/config
+|4,39,5,15,1614644382,"~/.config/i3/config"
 -'  11  5  ~/.bashrc
 |4,39,11,5,1614644238,"~/.bashrc"
 -'  11  5  ~/.bashrc
@@ -215,6 +215,12 @@
 |4,39,17,0,1614643923,"~/.config/i3/config"
 -'  18  0  ~/.config/i3/config
 |4,39,18,0,1614643923,"~/.config/i3/config"
+-'  17  0  ~/.config/i3/config
+|4,39,17,0,1614643923,"~/.config/i3/config"
+-'  17  0  ~/.config/i3/config
+|4,39,17,0,1614643923,"~/.config/i3/config"
+-'  17  0  ~/.config/i3/config
+|4,39,17,0,1614643923,"~/.config/i3/config"
 -'  17  0  ~/.config/i3/config
 |4,39,17,0,1614643923,"~/.config/i3/config"
 -'  23  0  ~/.config/i3/config
@@ -265,20 +271,16 @@
 |4,39,53,0,1614643922,"~/.config/i3/config"
 -'  61  0  ~/.config/i3/config
 |4,39,61,0,1614643922,"~/.config/i3/config"
--'  66  0  ~/.config/i3/config
-|4,39,66,0,1614643921,"~/.config/i3/config"
--'  70  0  ~/.config/i3/config
-|4,39,70,0,1614643921,"~/.config/i3/config"
--'  75  0  ~/.config/i3/config
-|4,39,75,0,1614643921,"~/.config/i3/config"
+-'  22  0  ~/.config/i3/config
+|4,39,22,0,1614643922,"~/.config/i3/config"
 
 # History of marks within files (newest to oldest):
 
 > ~/.config/i3/config
-	*	1614693203	0
-	"	37	42
-	^	37	35
-	.	37	0
+	*	1614692569	0
+	"	1	0
+	^	4	0
+	.	5	0
 	+	60	69
 	+	32	45
 	+	37	21
@@ -286,4 +288,35 @@
 	+	5	0
 	+	4	0
 	+	5	0
-	+	37	0
+
+> ~/.bash_profile
+	*	1614683007	0
+	"	7	69
+	^	7	70
+	.	7	69
+	+	7	69
+
+> ~/.xinitrc
+	*	1614682887	0
+	"	58	6
+	^	58	7
+	.	58	7
+	+	55	0
+	+	54	0
+	+	53	0
+	+	52	0
+	+	51	0
+	+	58	7
+
+> ~/.bashrc
+	*	1614644239	0
+	"	16	0
+	^	11	17
+	.	11	5
+	+	12	0
+	+	9	0
+	+	9	19
+	+	16	3
+	+	16	4
+	+	17	0
+	+	11	5

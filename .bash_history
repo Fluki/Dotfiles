@@ -43,3 +43,6 @@ sudo pacman -S os-prober
 sudo os-prober
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cf
+sudo mount /dev/sdb1 /mnt
+vim .config/i3/config 
+vim
